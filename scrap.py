@@ -50,8 +50,8 @@ def getBodyContent(arr):
 fileContent = []
 #csv file to save content in
 
-file = getFileName('today')+'.csv'
-fileYesterday = getFileName('yesterday')+'.csv'
+file = "data/"+getFileName('today')+'.csv'
+fileYesterday = "data/"+getFileName('yesterday')+'.csv'
 
 
 covidData = getBodyContent(tbody)
@@ -72,7 +72,6 @@ with open(fileYesterday,'w') as f:
         w.writerow(row)
 
 #upload file to server
-#upload file on server
 # os.system("cp "+file+" ~/Documents")
 # os.system("cp "+fileYesterday+" ~/Documents")
 os.system("scp "+file+" user@domain:public_html/path/"+file)
